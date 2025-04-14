@@ -21,7 +21,7 @@ body {
   overscroll-behavior: none;
 }
 
-/* 瀹氫箟鑳屾櫙骞崇Щ鍔ㄧ敾 */
+/* 定义背景平移动画 */
 @keyframes moveBackground {
   0% {
     background-position: 0 0;
@@ -45,23 +45,23 @@ body {
   justify-content: center;
 
   background-image: url('background_cross.png');
-  background-repeat: no-repeat; /* 涓嶉噸澶嶈儗鏅浘 */
-  background-size: auto 100%; /* 鑳屾櫙鍥鹃珮搴﹂€傚簲瀹瑰櫒锛岄珮搴�100% */
+  background-repeat: no-repeat; /* 不重复背景图 */
+  background-size: auto 100%; /* 背景图高度适应容器，高度100% */
   background-color: var(--secondary-color);
 
-  /* 搴旂敤鍔ㄧ敾 */
+  /* 应用动画 */
   animation: moveBackground 5s linear forwards;
 }
 
 /* Background Styling */
 #content {
   background-image: url('../../background_cross.png');
-  background-repeat: no-repeat; /* 涓嶉噸澶嶈儗鏅浘 */
-  background-size: auto 100%; /* 鑳屾櫙鍥鹃珮搴﹂€傚簲瀹瑰櫒锛岄珮搴�100% */
+  background-repeat: no-repeat; /* 不重复背景图 */
+  background-size: auto 100%; /* 背景图高度适应容器，高度100% */
   z-index: -1;
   background-color: var(--secondary-color);
 
-  /* 搴旂敤鍔ㄧ敾 */
+  /* 应用动画 */
   animation: moveBackground 5s linear forwards;
 }
 

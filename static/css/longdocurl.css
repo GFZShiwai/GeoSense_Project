@@ -1,0 +1,23 @@
+.container-wrapper {
+    display: grid; /* 使用grid布局 */
+    grid-template-columns: 1fr 1.2fr; /* 调整列布局比例，右边列稍大 */
+    gap: 0px; /* 设置两个div之间的间距 */
+    align-items: start; /* 垂直对齐方式 */
+    justify-content: center; /* 水平居中对齐 */
+    margin: auto; /* 确保容器相对于页面居中 */
+    max-width: 1600px; /* 设置一个最大宽度，防止容器过宽 */
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+  
+  #container {
+    height: 100%;
+    margin-left: 150px;
+  }
+  
+  #image-container {
+    height: 620px;
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+  }
