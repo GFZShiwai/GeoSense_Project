@@ -1,1 +1,732 @@
-<h1> Hello World! </h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ChineseSimpleVQA </title>
+
+  <!-- <link rel="icon" href="./static/images/video-mme.png"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="stylesheet" href="./static/css/video-player.css">
+
+  <!-- <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script> -->
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/explorer-index.js"></script>
+  <script src="./static/js/question_card.js"></script>
+
+  <script src="./static/js/leaderboard_testmini.js"></script>  
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
+
+  <script type="text/javascript" src="./static/js/echarts.min.js"></script>
+  <script src="./static/js/circle.js"></script>
+
+  <style>
+    .no-sort {
+        cursor: default;
+        pointer-events: none;
+        background-image: none !important; /* Remove the sort arrow */
+    }
+    thead th {
+        /* background-color: #f2f2f2; First level header background */
+        background-color: #c30f0f;
+    }
+    .header-level-2 {
+        background-color: #e6f7ff; /* Second level header background */
+    }
+    .header-level-3 {
+        background-color: #d9f2d9; /* Third level header background */
+    }
+    .header-level-4 {
+        background-color: #ffcce0; /* Fourth level header background */
+    }
+  </style>
+
+</head>
+<body>
+
+  
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <p style="font-size:18px; display: inline; margin-right: -2px; margin-top: 12px;">🔥</p>
+        <a class="navbar-link">
+          More Research
+        </a>
+        <!-- <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
+            <b>MME</b> 
+          </a>
+          <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
+            <b>Awesome-MLLM</b> 
+          </a>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <!-- <img src="static/images/video-mme.png" style="width:1.6em;vertical-align: middle" alt="Logo"/> -->
+            <span class="ChineseSimpleVQA" style="vertical-align: middle">ChineseSimpleVQA</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle", style="margin-bottom: 20px;">
+              “See” the World, Discover Knowledge
+          </h2>
+          
+          <!-- <div class="is-size-5 publication-authors", style="width: 80%; margin: 20px auto;", >
+            <span class="author-block", style="font-size:24px"><a href="https://github.com/BradyFU/Video-MME">Video-MME Team</a></span>
+
+        </div> -->
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><sup style="color:#6fbf73;">1</sup>USTC,</span>
+            <span class="author-block"><sup style="color:#ed4b82">2</sup>XMU,</span>
+            <span class="author-block"><sup style="color:#9400D3">3</sup>HKU,</span>
+            <span class="author-block"><sup style="color:#ffac33">4</sup>PKU,</span>
+            <span class="author-block"><sup style="color:#18acfb">5</sup>CUHK,</span>
+            <span class="author-block"><sup style="color:#33ffd6">6</sup>ECNU</span><br> -->
+            <!-- <span class="paper-block"><b style="color:#f41c1c">ICLR 2024 Oral</b> (85 in 7304, 1.2%)</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://ChineseSimpleVQA.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
+                   class="external-link button is-normal is-rounded is-dark"> -->
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://ChineseSimpleVQA.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://ChineseSimpleVQA.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">📊</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span> 
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <p style="font-size:18px">🏆</p>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Introduction -->
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          The factual accuracy of responses generated by large vision language models (LVLMs) is a key metric for assessing model capability, reflecting both the model's knowledge capacity and its reliability. To test the abilities to ``see the world and discover knowledge'' of LVLMs, we introduce the first knowledge-based visual question-answering Chinese benchmark, Chinese SimpleVQA. Key features of Chinese SimpleVQA include Chinese language focus, diverse knowledge types, a multi-hop question construction mechanism, high-quality data, static consistency, and easy-to-evaluate through short answers. It  provides image object recognition questions alongside further knowledge-based questions, allowing users to explore the model's knowledge boundaries and analyze its performance at various stages. Our ultimate goal is to assist developers in better understanding and analyzing the factual capabilities of their models, thereby advancing the development of LVLMs and improving the factual accuracy of LVLMs in real-world applications. <br>
+          Since our paper is currently under review, in accordance with the double-blind principle, we have anonymized the repository containing the data (images are provided as links) and the evaluation code. <b>The repository is as follows:<b> <a href="https://anonymous.4open.science/r/ChineseSimpleVQA-0A60/README.md">anonymous_code</a>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    updateRowNumbers();
+    document.querySelector("#results").addEventListener("click", updateRowNumbers);
+  });
+
+  function updateRowNumbers() {
+    const rows = document.querySelectorAll("#results tbody tr");
+    rows.forEach((row, index) => {
+      row.querySelector("td").innerText = index + 1;
+    });
+  }
+</script>
+
+<!-- Leaderboard -->
+<section class="section">
+  <div class="container">
+    
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+
+        <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+        <div class="content" style="overflow-x: auto">
+          <table class="js-sort-table" id="results" style="margin-left: auto; margin-right: auto;">
+            <!-- <thead>
+              <tr>
+                <th rowspan="4" class="no-sort" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="none"><strong>#</strong></th>
+                <th rowspan="4" class="no-sort" style="vertical-align: middle; width: 180px;" data-js-sort-colNum="none"><strong>Model</strong></th>
+                <th rowspan="4" class="no-sort" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="none"><strong>Size</strong></th>
+                <th colspan="10" class="no-sort" style="vertical-align: middle; width: 50px;" data-js-sort-colNum="none"><strong>Understanding</strong></th>
+                <th colspan="10" class="no-sort" style="vertical-align: middle; width: 100px;" data-js-sort-colNum="none"><strong>Reasoning</strong></th>
+                <th colspan="5" class="no-sort" style="vertical-align: middle; width: 110px;" data-js-sort-colNum="none"><strong>Locating</strong></th>
+                <th rowspan="3" class="no-sort" style="vertical-align: middle; width: 300px;" data-js-sort-colNum="none"><strong>Total</strong></th>
+              </tr>
+              <tr>
+                <th colspan="5" data-js-sort-colNum="4"><strong>single-page</strong></th>
+                <th colspan="5" data-js-sort-colNum="9"><strong>multi-page</strong></th>
+                <th colspan="5" data-js-sort-colNum="14"><strong>single-page</strong></th>
+                <th colspan="5" data-js-sort-colNum="19"><strong>multi-page</strong></th>
+                <th colspan="5" data-js-sort-colNum="24"><strong>cross-element</strong></th>
+              </tr>
+              <tr>
+                <th data-js-sort-colNum="4"><strong>TXT</strong></th>
+                <th data-js-sort-colNum="5"><strong>LAY</strong></th>
+                <th data-js-sort-colNum="6"><strong>FIG</strong></th>
+                <th data-js-sort-colNum="7"><strong>TAB</strong></th>
+                <th data-js-sort-colNum="8"><strong>all</strong></th>
+                <th data-js-sort-colNum="9"><strong>TXT</strong></th>
+                <th data-js-sort-colNum="10"><strong>LAY</strong></th>
+                <th data-js-sort-colNum="11"><strong>FIG</strong></th>
+                <th data-js-sort-colNum="12"><strong>TAB</strong></th>
+                <th data-js-sort-colNum="13"><strong>all</strong></th>
+                <th data-js-sort-colNum="14"><strong>TXT</strong></th>
+                <th data-js-sort-colNum="15"><strong>LAY</strong></th>
+                <th data-js-sort-colNum="16"><strong>FIG</strong></th>
+                <th data-js-sort-colNum="17"><strong>TAB</strong></th>
+                <th data-js-sort-colNum="18"><strong>all</strong></th>
+                <th data-js-sort-colNum="19"><strong>TXT</strong></th>
+                <th data-js-sort-colNum="20"><strong>LAY</strong></th>
+                <th data-js-sort-colNum="21"><strong>FIG</strong></th>
+                <th data-js-sort-colNum="22"><strong>TAB</strong></th>
+                <th data-js-sort-colNum="23"><strong>all</strong></th>
+                <th data-js-sort-colNum="24"><strong>TXT</strong></th>
+                <th data-js-sort-colNum="25"><strong>LAY</strong></th>
+                <th data-js-sort-colNum="26"><strong>FIG</strong></th>
+                <th data-js-sort-colNum="27"><strong>TAB</strong></th>
+                <th data-js-sort-colNum="28"><strong>all</strong></th>
+              </tr>
+              <tr>
+                <th data-js-sort-colNum="4"><strong>259</strong></th>
+                <th data-js-sort-colNum="5"><strong>91</strong></th>
+                <th data-js-sort-colNum="6"><strong>94</strong></th>
+                <th data-js-sort-colNum="7"><strong>263</strong></th>
+                <th data-js-sort-colNum="8"><strong>612</strong></th>
+                <th data-js-sort-colNum="9"><strong>443</strong></th>
+                <th data-js-sort-colNum="10"><strong>172</strong></th>
+                <th data-js-sort-colNum="11"><strong>174</strong></th>
+                <th data-js-sort-colNum="12"><strong>115</strong></th>
+                <th data-js-sort-colNum="13"><strong>631</strong></th>
+                <th data-js-sort-colNum="14"><strong>40</strong></th>
+                <th data-js-sort-colNum="15"><strong>12</strong></th>
+                <th data-js-sort-colNum="16"><strong>28</strong></th>
+                <th data-js-sort-colNum="17"><strong>98</strong></th>
+                <th data-js-sort-colNum="18"><strong>158</strong></th>
+                <th data-js-sort-colNum="19"><strong>115</strong></th>
+                <th data-js-sort-colNum="20"><strong>40</strong></th>
+                <th data-js-sort-colNum="21"><strong>85</strong></th>
+                <th data-js-sort-colNum="22"><strong>69</strong></th>
+                <th data-js-sort-colNum="23"><strong>229</strong></th>
+                <th data-js-sort-colNum="24"><strong>201</strong></th>
+                <th data-js-sort-colNum="25"><strong>126</strong></th>
+                <th data-js-sort-colNum="26"><strong>137</strong></th>
+                <th data-js-sort-colNum="27"><strong>231</strong></th>
+                <th data-js-sort-colNum="28"><strong>695</strong></th>
+                <th data-js-sort-colNum="29"><strong>2325</strong></th>
+              </tr>
+            </thead> -->
+            <thead>
+              <tr>
+                <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 50px; background-color: #ddd" data-js-sort-colNum="none"><strong>#</strong></th>
+                <th rowspan="2" class="no-sort" style="vertical-align: middle; width: 240px; background-color: #ddd" data-js-sort-colNum="none"><strong>Model</strong></th>
+                <th colspan="5" class="no-sort" style="vertical-align: middle; width: 50px; background-color: #ddd" data-js-sort-colNum="none"><strong>Overall results of Merged Final Q&amp;A</strong></th>
+                <th colspan="5" class="no-sort" style="vertical-align: middle; width: 50px; background-color: #ddd" data-js-sort-colNum="none"><strong>Overall results of Recognition Q&amp;A</strong></th>
+              </tr>
+              <tr>
+                <th data-js-sort-colNum="3"><strong>CO</strong></th>
+                <th data-js-sort-colNum="4"><strong>IN↓</strong></th>
+                <th data-js-sort-colNum="5"><strong>NA↓</strong></th>
+                <th data-js-sort-colNum="6"><strong>CGA</strong></th>
+                <th data-js-sort-colNum="7"><strong>F-score</strong></th>
+                <th data-js-sort-colNum="8"><strong>CO</strong></th>
+                <th data-js-sort-colNum="9"><strong>IN↓</strong></th>
+                <th data-js-sort-colNum="10"><strong>NA↓</strong></th>
+                <th data-js-sort-colNum="11"><strong>CGA</strong></th>
+                <th data-js-sort-colNum="12"><strong>F-score</strong></th>
+              </tr>
+              <!-- <tr>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="4"><strong>1243</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="5"><strong>387</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="6"><strong>695</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="7"><strong>994</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="8"><strong>779</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="9"><strong>556</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="10"><strong>871</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="11"><strong>1093</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="12"><strong>1230</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="13"><strong>862</strong></th>
+                <th style="background-color: #f4f4f4" data-js-sort-colNum="14"><strong>2325</strong></th>
+              </tr> -->
+            </thead>
+            <tbody>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <!-- <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-05-13</a> -->
+                    <a style="font-size: 16px; margin-left: 5px; color: #c30f0f;">o1-preview 🥇</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">OpenAI</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">68.8</td>
+                <td style="vertical-align: middle;">24.6</td>
+                <td style="vertical-align: middle;">6.5</td>
+                <td style="vertical-align: middle;">73.6</td>
+                <td style="vertical-align: middle;">71.1</td>
+                <td style="vertical-align: middle;">79.1</td>
+                <td style="vertical-align: middle;">13.6</td>
+                <td style="vertical-align: middle;">7.3</td>
+                <td style="vertical-align: middle;">85.3</td>
+                <td style="vertical-align: middle;">82.1</td>                               
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <!-- <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-05-13</a> -->
+                    <a style="font-size: 16px; margin-left: 5px; color: #c30f0f;">Gemini-1.5-Pro 🥈</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">56.5</td>
+                <td style="vertical-align: middle;">34.6</td>
+                <td style="vertical-align: middle;">8.8</td>
+                <td style="vertical-align: middle;">62.0</td>
+                <td style="vertical-align: middle;">59.2</td>
+                <td style="vertical-align: middle;">70.3</td>
+                <td style="vertical-align: middle;">25.9</td>
+                <td style="vertical-align: middle;">3.8</td>
+                <td style="vertical-align: middle;">73.1</td>
+                <td style="vertical-align: middle;">71.6</td>                                
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <!-- <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-05-13</a> -->
+                    <a style="font-size: 16px; margin-left: 5px; color: #c30f0f;">Gemini-2.0-flash 🥉</a>
+                    <p style="font-size: 12px; margin-left: 5px; color: #858383;">Google</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">64.5</td>
+                <td style="vertical-align: middle;">29.5</td>
+                <td style="vertical-align: middle;">5.9</td>
+                <td style="vertical-align: middle;">68.6</td>
+                <td style="vertical-align: middle;">66.5</td>
+                <td style="vertical-align: middle;">76.7</td>
+                <td style="vertical-align: middle;">19.6</td>
+                <td style="vertical-align: middle;">3.7</td>
+                <td style="vertical-align: middle;">79.7</td>
+                <td style="vertical-align: middle;">78.2</td>                                
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <!-- <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-05-13</a> -->
+                    <a style="font-size: 16px; margin-left: 5px;">Claude-3.5-sonnet2</a>
+                    <p style="font-size: 12px; margin-left: 5px;">Anthropic</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">63.8</td>
+                <td style="vertical-align: middle;">30.6</td>
+                <td style="vertical-align: middle;">5.5</td>
+                <td style="vertical-align: middle;">67.6</td>
+                <td style="vertical-align: middle;">65.6</td>
+                <td style="vertical-align: middle;">77.6</td>
+                <td style="vertical-align: middle;">17.2</td>
+                <td style="vertical-align: middle;">5.2</td>
+                <td style="vertical-align: middle;">81.9</td>
+                <td style="vertical-align: middle;">79.7</td>                              
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <!-- <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-05-13</a> -->
+                    <a style="font-size: 16px; margin-left: 5px;">Claude-3.5-sonnet</a>
+                    <p style="font-size: 12px; margin-left: 5px;">Anthropic</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">59.5</td>
+                <td style="vertical-align: middle;">26.4</td>
+                <td style="vertical-align: middle;">14.2</td>
+                <td style="vertical-align: middle;">69.4</td>
+                <td style="vertical-align: middle;">64.0</td>
+                <td style="vertical-align: middle;">69.5</td>
+                <td style="vertical-align: middle;">20.2</td>
+                <td style="vertical-align: middle;">10.3</td>
+                <td style="vertical-align: middle;">77.5</td>
+                <td style="vertical-align: middle;">73.3</td>                                
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <!-- <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-05-13</a> -->
+                    <a style="font-size: 16px; margin-left: 5px;">GPT-4o</a>
+                    <p style="font-size: 12px; margin-left: 5px;">OpenAI</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">59.1</td>
+                <td style="vertical-align: middle;">35.5</td>
+                <td style="vertical-align: middle;">5.4</td>
+                <td style="vertical-align: middle;">62.4</td>
+                <td style="vertical-align: middle;">60.7</td>
+                <td style="vertical-align: middle;">77.5</td>
+                <td style="vertical-align: middle;">15.5</td>
+                <td style="vertical-align: middle;">7.0</td>
+                <td style="vertical-align: middle;">83.4</td>
+                <td style="vertical-align: middle;">80.4</td>                                
+              </tr>
+
+              <tr>
+                <td style="vertical-align: middle;"></td>
+                <td style="text-align: left; padding: 2px 10px;">
+                  <b class="">
+                    <!-- <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px; margin-left: 5px;">GPT-4o-2024-05-13</a> -->
+                    <a style="font-size: 16px; margin-left: 5px;">Qwen-VL-max</a>
+                    <p style="font-size: 12px; margin-left: 5px;">Alibaba</p>
+                  </b>
+                </td>
+                <td style="vertical-align: middle;">56.5</td>
+                <td style="vertical-align: middle;">39.6</td>
+                <td style="vertical-align: middle;">3.8</td>
+                <td style="vertical-align: middle;">58.8</td>
+                <td style="vertical-align: middle;">57.6</td>
+                <td style="vertical-align: middle;">72.9</td>
+                <td style="vertical-align: middle;">24.6</td>
+                <td style="vertical-align: middle;">2.5</td>
+                <td style="vertical-align: middle;">74.7</td>
+                <td style="vertical-align: middle;">73.8</td>                              
+              </tr>
+          </tbody>                                                   
+        </table> 
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 mathvista_other">
+    <span class="mathvista_other" style="vertical-align: middle">Benchmark</span>
+  </h1>
+  </div>
+</section>
+            
+<section class="section">
+  <div class="container">
+    <!-- Statistics -->
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Statistics</h2>
+      </div>
+    </div>
+
+    <!-- Knowledge Distribution -->
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Knowledge distribution.</h2>
+        <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="static/datastate.png" alt="grade-lv" style="max-width: 100%;"/>
+            <p>Knowledge category distribution.
+            </p> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Construction Pipeline -->
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-3">Construction Pipeline</h2>
+        <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="static/222.png" alt="grade-lv" style="max-width: 100%;"/>
+            <p>An overview of the entire production process of Chinese SimpleVQA.
+            </p> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+  </div> 
+</section>
+
+
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Experiment Results</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths" style="width: 100%;">
+        <h2 class="title is-3">Main Results</h2>
+        <div class="content has-text-justified">
+            <img src="static/img/main_results1.png" alt="grade-lv" style="width: 100%;"/>
+            <p style="text-align: center; margin-left: auto; margin-right: auto; width: 75%;">
+              Performance comparison of closed source and open source LVLMs on multi-hop QAs 
+              (i.e. Merged Q&amp;A and Recognition Q&amp;A). For metrics, CO, NA, IN, and CGA denote ``Correct'', ``Not attempted'', ``Incorrect'', and ``Correct given attempted'', respectively. 
+              The highest scores among models in each section are highlighted in <span style="color: #00b35d;">green</span>.
+            </p>
+                
+    
+          
+        </div>
+      </div> 
+    </div>
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Overall Rankings on ChineseSimpleVQA</h2>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/img/compare.png" alt="grade-lv" width="100%"/>
+              <p>
+                Rankings of different models on ChineseSimpleVQA.
+
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Performance on Different Topics</h2>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/img/combined_dual_radar_charts1.png" alt="grade-lv" width="100%"/>
+              <p>
+                Correctness(CO) metric for eight topics. We show the top 10 models here.
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Further Analysis</h2>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/img/calibration_and_inference_comparison.png" alt="grade-lv" width="50%"/>
+              <p>
+                Up: Calibration of LLMs based on their stated confidence for Recognition and final Q&amp;A.
+                <br> Down: Improvement in accuracy with increased test-time compute using Best-of-N for Recognition and final Q&amp;A.
+              </p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Data Examples -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">Data Examples</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths" style="width: 100%;">
+        <h2 class="title is-3">Data Examples</h2>
+        <div class="content has-text-justified">
+          <div id="results-carousel" class="carousel results-carousel">  
+            
+              <div class="content has-text-centered">
+
+                <img src="static/img/1.jpg" style="width: 65%;"/>
+                <p style="margin-bottom: 30px;">
+                  Examples of ChineseSimpleVQA on 8 topics.
+                </p>
+                
+              </div>
+            
+              <div class="content has-text-centered">
+
+                <img src="static/img/2.jpg" style="width: 75%;"/>
+                <p style="margin-bottom: 30px;">
+                  Model response examples of ChineseSimpleVQA: part 1.</p>
+              
+              </div>
+
+              <div class="content has-text-centered">
+
+                <img src="static/img/3.jpg" style="width: 75%;"/>
+                <p style="margin-bottom: 30px;">
+                  Model response examples of ChineseSimpleVQA: part 2.</p>
+              
+              </div>
+
+              <div class="content has-text-centered">
+
+                <img src="static/img/4.jpg" style="width: 75%;"/>
+                <p style="margin-bottom: 30px;">Model response examples of ChineseSimpleVQA: part 3.   </p>               .</p>
+              
+              </div>
+
+
+          </div>
+
+          
+        </div>
+      </div> 
+    </div>
+  </div>
+</section>
+<!-- </section>
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other" id="citation">Citation</h1>
+  </div>
+</section> -->
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <pre><code>
+    @article{anonymous2024longdoc,
+      title={LongDocURL: a Comprehensive Multimodal Long Document Benchmark Integrating Understanding, Reasoning, and Locating},
+      author={Anonymous Authors},
+      journal={none},
+      year={2024}
+    }
+</code></pre>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container" style="width: 60%;">
+  <style>
+      pre {
+        background-color: #f4f4f4;
+        padding: 5px; /* 调整padding为5px */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow-x: auto; /* 允许水平滚动 */
+    }
+    code {
+        font-family: Consolas, "Courier New", monospace;
+        color: #d63384; /* 代码文本颜色 */
+    }
+  </style>
+
+
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="content has-text-centered">
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p style="text-align: center;">
+          This website is licensed under a <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
