@@ -1,303 +1,331 @@
-var data = [
-  {
-    name: 'Solid\nGeometry',
-    itemStyle: {
-      color: '#A3D3D2' //柔和的青色
-    },
-    children: [
-      {
-        name: 'Calculations',
-        value: 17,
-        itemStyle: {
-          color: '#A3D3D2' //稍淡的青色
-        },
-        children: [
-          {
-            name: 'Surface\nArea',
-            value: 10,
-            itemStyle: {
-              color: '#B8DFDE' //更浅的青色
-            }
-          },
-          {
-            name: 'Volume',
-            value: 7,
-            itemStyle: {
-              color: '#CCECEA' //这样就不会过于白了
-            }
-          }
-        ]
-      },
-      {
-        name: 'Understanding',
-        itemStyle: {
-          color: '#9EDAB' //使用淡绿色青色
-        },
-        children: [
-          {
-            name: 'Cylinder \nand Cone',
-            value: 4,
-            itemStyle: {
-              color: ' #B2E3C3E' //稍浅的绿青色
-            }
-          },
-          {
-            name: 'Cuboid',
-            value: 2,
-            itemStyle: {
-              color: '#C8F0E2E' //更浅的绿青色
-            }
-          },
-          {
-            name: 'Prism',
-            value: 2,
-            itemStyle: {
-              color: '#DCFAF4' //没有到接近白色
-            }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Plane Geometry',
-    itemStyle: {
-      color: '#FAE3D9' //柔和的桃色
-    },
-    children: [
-      {
-        name: 'Transformation',
-        itemStyle: {
-          color: '#FBEBE4' //稍浅的桃色
-        },
-        children: [
-          {
-            name: 'Symmetry',
-            value: 2,
-            itemStyle: {
-              color: '#FCF2EA' //更浅但不白的桃色
-            }
-          },
-          {
-            name: 'Reflection',
-            value: 2,
-            itemStyle: {
-              color: '#FDF9F1' //不接近白色的桃色
-            }
-          },
-          {
-            name: 'Rotation',
-            value: 6,
-            itemStyle: {
-              color: '#FEF0E8' //柔和变化的桃色
-            }
-          },
-          {
-            name: 'Scale',
-            value: 2,
-            itemStyle: {
-              color: '#FFF7EF' //浅桃色，避免接近白色
-            }
-          },
-          {
-            name: 'Translation',
-            value: 2,
-            itemStyle: {
-              color: '#FFEEE5' //柔和的桃色
-            }
-          }
-        ]
-      },
-      {
-        name: 'Calculation',
-        itemStyle: {
-          color: '#F4C2C2' //柔粉色
-        },
-        children: [
-          {
-            name: 'Interior and\n Exterior\n Angles',
-            value: 5,
-            itemStyle: {
-              color: '#F6CFCF' //稍浅的粉色
-            }
-          },
-          {
-            name: 'Areas',
-            value: 10,
-            itemStyle: {
-              color: '#FCF0F0' //更浅但不白的粉色
-            }
-          },
-          {
-            name: 'Perimeters',
-            value: 6,
-            itemStyle: {
-              color: '#F8DAD9' //不接近白色的粉色
-            }
-          }
-        ]
-      },
-      {
-        name: 'Base\nElements',
-        value: 24,
-        itemStyle: {
-          color: '#E6E6FA' //柔灰绿色
-        },
-        children: [
-          {
-            name: 'Angles',
-            value: 8,
-            itemStyle: {
-              color: '#F5F5FF' //稍浅的灰绿色
-            }
-          },
-          {
-            name: 'Lines',
-            value: 4,
-            itemStyle: {
-              color: '#FAFAFF' //更浅的灰绿色但不白
-            }
-          },
-          {
-            name: 'Relationships \nof Lines',
-            value: 12,
-            itemStyle: {
-              color: '#F0F0FF' //不接近白色的灰绿色
-            }
-          }
-        ]
-      },
-      {
-        name: 'Polygons',
-        itemStyle: {
-          color: '#F0C3B0' //柔米黄色
-        },
-        children: [
-          {
-            name: 'Parallelogram',
-            value: 3,
-            itemStyle: {
-              color: '#EDCFB4' //稍浅的米黄色
-            }
-          },
-          {
-            name: 'Rhombus',
-            value: 2,
-            itemStyle: {
-              color: '#F4E5CC' //更浅的米黄色但不白
-            }
-          },
-          {
-            name: 'Triangle',
-            value: 27,
-            itemStyle: {
-              color: '#F2D3BA' //柔和变化的米黄色
-            }
-          },
-          {
-            name: 'Trapezoid',
-            value: 3,
-            itemStyle: {
-              color: '#F0DAC0' //浅米黄色但不白
-            }
-          }
-        ]
-      },
-      
-      {
-        name: 'Circles',
-        value: 22,
-        itemStyle: {
-          color: '#ACE1AF' //柔和的浅绿色
-        },
-        children: [
-          {
-            name: 'Circle \nBasics',
-            value: 4,
-            itemStyle: {
-              color: '#BBE5BEZ' //稍浅的浅绿色
-            }
-          },
-          {
-            name: 'Angles \nabout \nCircles',
-            value: 8,
-            itemStyle: {
-              color: '#CBEACD' //更浅但不白的浅绿色
-            }
-          },
-          {
-            name: 'Tangents',
-            value: 5,
-            itemStyle: {
-              color: '#DAEFDC' //不接近白色的浅绿色
-            }
-          },
-          {
-            name: 'Arc\n and \nSectors',
-            value: 5,
-            itemStyle: {
-              color: '#E9F4EB' //浅绿色但不至于白色
-            }
-          }
-        ]
-      }
-    ]
-  }
-];
 
-// 在选项配置中应用新的配色方案，并调整样式以提升清新淡雅的视觉效果
-option = {
-  title: {
-    text: '',
-    textStyle: {
-      fontSize: 12,
-      fontWeight: 'bold',
-      color: '#2A3547',
-      align: 'center'
-    },
-    subtextStyle: {
-      fontSize: 12,
-      fontWeight: 'bold',
-      color: '#666',
-      align: 'center'
-    },
-    sublink: 'https://your-source-link.com'
-  },
-  series: {
-    type: 'sunburst',
-    data: data,
-    radius: [0, '100%'],
-    label: {
-      textStyle: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        color: '#333'
-      }
-    },
-    levels: [
-      {
-        itemStyle: { borderWidth: 4 }
-      },
-      {
-        r0: '10%',
-        r: '28%',
-        label: { rotate: 'tangential' }
-      },
-      {
-        r0: '30%',
-        r: '68%',
-        label: { align: 'right' }
-      },
-      {
-        r0: '70%',
-        r: '100%',
-        label: {
-          position: 'inside',
-          padding: 5,
-          textBorderColor: '#fff',
-          textBorderWidth: 2
+        var dom = document.getElementById('container');
+        var myChart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+        });
+        var app = {};
+        
+        var option;
+
+        var data = [
+    {
+        name: 'Knowledge',
+        itemStyle: {
+        color: '#84c3b7'
+        },
+        children: [
+        {
+            name: 'Humanity &\n History',
+            value: 1,
+            itemStyle: {
+            color: '#e9eee0'
+            }
+        },
+        {
+            name: 'Literature & Art',
+            value: 1,
+            itemStyle: {
+            color: '#ebf1b7'
+            }
+        },
+        {
+            name: 'Biology &\n Medicine',
+            value: 1,
+            itemStyle: {
+            color: '#e2ebcf'
+            }
+        },
+        {
+            name: 'Finance &\n Commerce',
+            value: 1,
+            itemStyle: {
+            color: '#d6e4bb'
+            }
+        },
+        {
+            name: 'Astronomy',
+            value: 1,
+            itemStyle: {
+            color: '#eef5d9'
+            }
+        },
+        {
+            name: 'Geography',
+            value: 1,
+            itemStyle: {
+            color: '#d5ead5'
+            }
+        },
+        {
+            name: 'Law',
+            value: 1,
+            itemStyle: {
+            color: '#c8d6cf'
+            }
+        },
+        {
+            name: 'Life Tip',
+            value: 1,
+            itemStyle: {
+            color: '#cadbc6'
+            }
+        },
+        {
+            name: 'Technology',
+            value: 1,
+            itemStyle: {
+            color: '#c3dcd7'
+            }
         }
-      }
-    ]
-  }
-};
+        ]
+    },
+    {
+        name: 'Film &\nTelevision',
+        itemStyle: {
+        color: '#71b7ed'
+        },
+        children: [
+        {
+            name: 'Animation',
+            value: 1,
+            itemStyle: {
+            color: '#bcdff7'
+            }
+        },
+        {
+            name: 'Movie &\n TV Show',
+            value: 1,
+            itemStyle: {
+            color: '#b4d4f9'
+            }
+        },
+        {
+            name: 'Documentary',
+            value: 1,
+            itemStyle: {
+            color: '#c4e4ed'
+            }
+        },
+        {
+            name: 'News Report',
+            value: 1,
+            itemStyle: {
+            color: '#cbd4f7'
+            }
+        }
+        ]
+    },
+    {
+        name: 'Sports\nCompetition',
+        itemStyle: {
+        color: '#9899ee'
+        },
+        children: [
+        {
+            name: 'Esports',
+            value: 1,
+            itemStyle: {
+            color: '#e5e2f5'
+            }
+        },
+        {
+            name: 'Basketball',
+            value: 1,
+            itemStyle: {
+            color: '#e7e0eb'
+            }
+        },
+        {
+            name: 'Football',
+            value: 1,
+            itemStyle: {
+            color: '#e8dfe6'
+            }
+        },
+        {
+            name: 'Athletics',
+            value: 1,
+            itemStyle: {
+            color: '#fce5e9'
+            }
+        },
+        {
+            name: 'Other Sports',
+            value: 1,
+            itemStyle: {
+            color: '#efdadf'
+            }
+        }
+        ]
+    },
+    {
+        name: 'Artistic\nPerformance',
+        itemStyle: {
+        color: '#f57c6e'
+        },
+        children: [
+        {
+            name: 'Stage Play',
+            value: 1,
+            itemStyle: {
+            color: '#ffd1d8'
+            }
+        },
+        {
+            name: 'Magic Show',
+            value: 1,
+            itemStyle: {
+            color: '#f4bec3'
+            }
+        },
+        {
+            name: 'Variety Show',
+            value: 1,
+            itemStyle: {
+            color: '#ffcbcd'
+            }
+        },
+        {
+            name: 'Acrobatics',
+            value: 1,
+            itemStyle: {
+            color: '#f9c0b4'
+            }
+        }
+        ]
+    },
+    {
+        name: 'Life Record',
+        itemStyle: {
+        color: '#f2b56f'
+        },
+        children: [
+        {
+            name: 'Handicraft',
+            value: 1,
+            itemStyle: {
+            color: '#fed5c0'
+            }
+        },
+        {
+            name: 'Food',
+            value: 1,
+            itemStyle: {
+            color: '#ffcea2'
+            }
+        },
+        {
+            name: 'Fashion',
+            value: 1,
+            itemStyle: {
+            color: '#faeed3'
+            }
+        },
+        {
+            name: 'Daily Life',
+            value: 1,
+            itemStyle: {
+            color: '#fedec0'
+            }
+        },
+        {
+            name: 'Travel',
+            value: 1,
+            itemStyle: {
+            color: '#fbe7d2'
+            }
+        },
+        {
+            name: 'Pet & Animal',
+            value: 1,
+            itemStyle: {
+            color: '#f8f3da'
+            }
+        },
+        {
+            name: 'Exercise',
+            value: 1,
+            itemStyle: {
+            color: '#fcecd0'
+            }
+        }
+        ]
+    },
+    {
+        name: '',
+        itemStyle: {
+        color: '#f7e16f'
+        },
+        children: [
+        {
+            name: 'Multilingual',
+            value: 1,
+            itemStyle: {
+            color: '#fff5c3'
+            }
+        }
+        ]
+    }
+    ];
+    option = {
+    series: {
+        type: 'sunburst',
+        data: data,
+        radius: [0, '95%'],
+        sort: undefined,
+        emphasis: {
+        focus: 'ancestor'
+        },
+        label: {
+        textStyle: {
+            // color: "#ffffff",
+            fontSize: 12,
+            // fontWeight: 'bolder',
+            fontFamily: 'serif'
+        }
+        },
+        levels: [
+        {},
+        {
+            r0: '16%',
+            r: '40%',
+            itemStyle: {
+            borderRadius: 6,
+            borderWidth: 4
+            },
+            label: {
+            rotate: 'tangential'
+            }
+        },
+        {
+            r0: '40%',
+            r: '75%',
+            itemStyle: {
+            borderRadius: 6,
+            borderWidth: 4
+            },
+            label: {
+            align: 'right'
+            }
+        },
+        {
+            r0: '75%',
+            r: '77%',
+            label: {
+            position: 'outside',
+            padding: 3,
+            silent: false
+            },
+            itemStyle: {
+            // borderWidth: 3
+            }
+        }
+        ]
+    }
+    };
+        if (option && typeof option === 'object') {
+        myChart.setOption(option);
+        }
+
+window.addEventListener('resize', myChart.resize);
