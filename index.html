@@ -642,106 +642,174 @@ Our in-depth analysis reveals that the identification and application of geometr
       </div>
     </div>
 
-                <div class="columns is-centered m-6">
-                    <div class="column is-full content">
-                      <div class="box has-background-light">
-                        <div class="content">
-                          <h3 class="title is-4 has-text-info">Key Experimental Insights</h3>
-                  
-                          <!-- Insight 1 -->
-                          <div class="mb-5">
-                            <h4 class="subtitle is-5 has-text-weight-semibold">GPI and GPA Jointly Affect Reasoning Abilities</h4>
-                            <ul class="insight-list">
-                              <li>Model accuracy is codetermined by both principle identification (GPI) and application (GPA) capabilities</li>
-                              <li>5% GPI improvement can lead to 7.7% accuracy gain with comparable GPA performance</li>
-                              <li>GPA decline directly impacts overall accuracy in full-scale evaluations</li>
-                              <li>Most models maintain consistent GPI across task types but suffer GPA degradation in complex scenarios</li>
-                            </ul>
-                          </div>
-                  
-                          <hr class="divider">
-                  
-                          <!-- Insight 2 -->
-                          <div class="my-5">
-                            <h4 class="subtitle is-5 has-text-weight-semibold">Performance Degradation on Complex Problems</h4>
-                            <div class="columns">
-                              <div class="column is-two-thirds">
-                                <ul class="insight-list">
-                                  <li>Problem complexity correlates with required geometric principles</li>
-                                  <li>GPI scores decrease 22% more rapidly than GPA as complexity increases</li>
-                                  <li>Closed-source models show 35% steeper performance drop than open-source alternatives</li>
-                                </ul>
-                              </div>
-                              <div class="column has-text-centered">
-                                <span class="tag is-info is-medium">Critical Finding</span>
-                                <p class="mt-2">Principle identification accuracy is the primary bottleneck for complex problem solving</p>
-                              </div>
-                            </div>
-                          </div>
-                  
-                          <hr class="divider">
-                  
-                          <!-- Insight 3 -->
-                          <div class="mt-5">
-                            <div class="columns is-vcentered">
-                              <div class="column is-one-third">
-                                <h4 class="subtitle is-5 has-text-weight-semibold">Computation vs Understanding Gap</h4>
-                              </div>
-                              <div class="column">
-                                <div class="message is-warning">
-                                  <div class="message-body">
-                                    Models demonstrate 42% higher GPI accuracy on computational problems compared to theoretical concepts
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                  
-                          <!-- Insight 4 -->
-                          <div class="notification is-primary-light mt-5">
-                            <h4 class="subtitle is-5 has-text-weight-semibold">Plane Geometry Challenges</h4>
-                            <div class="columns">
-                              <div class="column">
-                                <p class="has-text-weight-medium">Key Limitations:</p>
-                                <ul>
-                                  <li>38% GPI accuracy drop in plane geometry vs solid geometry</li>
-                                  <li>High principle similarity causes 62% misidentification rate</li>
-                                </ul>
-                              </div>
-                              <div class="column">
-                                <p class="has-text-weight-medium">Recommendations:</p>
-                                <ul>
-                                  <li>Enhanced principle disambiguation training</li>
-                                  <li>Context-aware geometric reasoning frameworks</li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                  
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <style>
-                  .insight-list {
-                    list-style-type: '▹ ';
-                    padding-left: 1.5rem;
-                    color: #4a4a4a;
-                  }
-                  .insight-list li {
-                    padding-left: 0.5rem;
-                    margin-bottom: 0.8rem;
-                  }
-                  .divider {
-                    background-color: #e8e8e8;
-                    margin: 2rem 0;
-                  }
-                  .notification.is-primary-light {
-                    background-color: #f0f7ff;
-                    border: 1px solid #cce5ff;
-                  }
-                  </style>
+                <div class="columns is-centered m-5">
+  <div class="column is-full content">
+    <div class="card has-background-white-ter" style="border: 1px solid #e8e8e8; border-radius: 12px;">
+      <div class="card-content">
+        <!-- 标题样式与主页完全一致 -->
+        <div class="has-text-centered mb-6">
+          <h3 class="title is-4 is-spaced" style="
+            display: inline-block;
+            position: relative;
+            padding: 0 2rem;
+            background: white;
+            z-index: 2;
+            color: #3273dc; /* 主色保持一致 */
+          ">
+            Key Experimental Insights
+          </h3>
+          <div style="
+            position: relative;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #e0e0e0 50%, transparent 100%);
+            margin-top: -1.8rem;
+            z-index: 1;
+          "></div>
+        </div>
+
+        <!-- Insight 1 -->
+        <div class="mb-5">
+          <h4 class="subtitle is-5 has-text-weight-semibold has-text-grey-darker">GPI and GPA Jointly Affect Reasoning Abilities</h4>
+          <ul class="insight-list has-text-grey-dark">
+            <li>Model accuracy is codetermined by both principle identification (GPI) and application (GPA) capabilities</li>
+            <li><span class="highlight-text">5% GPI improvement</span> can lead to <span class="highlight-text">7.7% accuracy gain</span> with comparable GPA performance</li>
+            <li>GPA decline directly impacts overall accuracy in full-scale evaluations</li>
+            <li>Most models maintain consistent GPI across task types but suffer GPA degradation in complex scenarios</li>
+          </ul>
+        </div>
+
+        <!-- 分割线样式统一 -->
+        <hr class="divider has-background-grey-lighter" style="height: 1px; margin: 2.5rem 0;">
+
+        <!-- Insight 2 -->
+        <div class="my-5">
+          <h4 class="subtitle is-5 has-text-weight-semibold has-text-grey-darker">Performance Degradation on Complex Problems</h4>
+          <div class="columns is-vcentered">
+            <div class="column is-two-thirds">
+              <ul class="insight-list has-text-grey-dark">
+                <li>Problem complexity correlates with required geometric principles</li>
+                <li><span class="has-text-danger">GPI scores decrease 22% more rapidly</span> than GPA as complexity increases</li>
+                <li>Closed-source models show <span class="has-text-danger">35% steeper performance drop</span> than open-source alternatives</li>
+              </ul>
+            </div>
+            <div class="column has-text-centered">
+              <div class="tags are-medium is-centered">
+                <span class="tag is-info is-light" style="border: 1px solid #3273dc;">
+                  <span class="icon"><i class="fas fa-exclamation-triangle"></i></span>
+                  <span>Critical Finding</span>
+                </span>
+              </div>
+              <p class="mt-3 has-text-grey" style="font-size: 0.9rem;">Principle identification accuracy is the primary bottleneck for complex problem solving</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider has-background-grey-lighter" style="height: 1px; margin: 2.5rem 0;">
+
+        <!-- Insight 3 -->
+        <div class="mt-5">
+          <div class="columns is-vcentered">
+            <div class="column is-one-third">
+              <h4 class="subtitle is-5 has-text-weight-semibold has-text-grey-darker">Computation vs Understanding Gap</h4>
+            </div>
+            <div class="column">
+              <div class="message is-warning is-light" style="border: 1px solid #ffdd86;">
+                <div class="message-body has-text-grey-darker">
+                  <span class="icon-text">
+                    <span class="icon has-text-warning">
+                      <i class="fas fa-balance-scale-right"></i>
+                    </span>
+                    <span>Models demonstrate <strong>42% higher GPI accuracy</strong> on computational problems compared to theoretical concepts</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insight 4 -->
+        <div class="notification is-primary-light mt-5" style="background-color: #f5faff; border: 1px solid #b6d4fe; border-radius: 8px;">
+          <h4 class="subtitle is-5 has-text-weight-semibold has-text-grey-darker">Plane Geometry Challenges</h4>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <div class="content">
+                <p class="has-text-weight-semibold has-text-info">Key Limitations:</p>
+                <ul class="has-text-grey-dark">
+                  <li>38% GPI accuracy drop in plane geometry vs solid geometry</li>
+                  <li>High principle similarity causes 62% misidentification rate</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="content">
+                <p class="has-text-weight-semibold has-text-success">Recommendations:</p>
+                <ul class="has-text-grey-dark">
+                  <li>Enhanced principle disambiguation training</li>
+                  <li>Context-aware geometric reasoning frameworks</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* 保持与主页一致的标题样式 */
+.title-underline {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, 
+    rgba(224, 224, 224, 0) 0%,
+    #e0e0e0 50%,
+    rgba(224, 224, 224, 0) 100%
+  );
+  margin: 1.5rem 0;
+}
+
+/* 核心洞察力列表样式 */
+.insight-list {
+  list-style: none;
+  padding-left: 1.25rem;
+}
+.insight-list li::before {
+  content: "▹";
+  color: #3273dc;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.25rem;
+  font-weight: 700;
+}
+
+/* 高亮文字效果 */
+.highlight-text {
+  background: linear-gradient(120deg, #e3f2fd 0%, #e3f2fd 100%);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* 数据卡片悬停动效 */
+.data-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid #f5f5f5;
+}
+.data-card:hover {
+  box-shadow: 0 14px 28px rgba(50,115,220,0.05), 
+              0 10px 10px rgba(50,115,220,0.04);
+  transform: translateY(-3px);
+}
+
+/* 主色规范 */
+:root {
+  --primary-blue: #3273dc;
+  --secondary-blue: #e3f2fd;
+  --accent-grey: #666;
+}
+</style>
 
 
   </div>
