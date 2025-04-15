@@ -635,12 +635,114 @@ Our in-depth analysis reveals that the identification and application of geometr
             <div class="content has-text-centered">
               <img src="static/error.jpg" alt="grade-lv" width="50%"/>
               <p>
-                Error Analysis of Leading Closed-Source and Open-Source MLLMs. 
+                Error Analysis of Leading Closed-Source and Open-Source MLLMs. For each problem, we identify the critical errors in their reasoning process and categorize them into four types: geometric principles identification (GPI) errors, geometric principles application (GPA) errors, calculation errors (CAL), and hallucinations (HAL).
               </p>
             </div>
           </div>
       </div>
     </div>
+
+                <div class="columns is-centered m-6">
+                    <div class="column is-full content">
+                      <div class="box has-background-light">
+                        <div class="content">
+                          <h3 class="title is-4 has-text-info">Key Experimental Insights</h3>
+                  
+                          <!-- Insight 1 -->
+                          <div class="mb-5">
+                            <h4 class="subtitle is-5 has-text-weight-semibold">GPI and GPA Jointly Affect Reasoning Abilities</h4>
+                            <ul class="insight-list">
+                              <li>Model accuracy is codetermined by both principle identification (GPI) and application (GPA) capabilities</li>
+                              <li>5% GPI improvement can lead to 7.7% accuracy gain with comparable GPA performance</li>
+                              <li>GPA decline directly impacts overall accuracy in full-scale evaluations</li>
+                              <li>Most models maintain consistent GPI across task types but suffer GPA degradation in complex scenarios</li>
+                            </ul>
+                          </div>
+                  
+                          <hr class="divider">
+                  
+                          <!-- Insight 2 -->
+                          <div class="my-5">
+                            <h4 class="subtitle is-5 has-text-weight-semibold">Performance Degradation on Complex Problems</h4>
+                            <div class="columns">
+                              <div class="column is-two-thirds">
+                                <ul class="insight-list">
+                                  <li>Problem complexity correlates with required geometric principles</li>
+                                  <li>GPI scores decrease 22% more rapidly than GPA as complexity increases</li>
+                                  <li>Closed-source models show 35% steeper performance drop than open-source alternatives</li>
+                                </ul>
+                              </div>
+                              <div class="column has-text-centered">
+                                <span class="tag is-info is-medium">Critical Finding</span>
+                                <p class="mt-2">Principle identification accuracy is the primary bottleneck for complex problem solving</p>
+                              </div>
+                            </div>
+                          </div>
+                  
+                          <hr class="divider">
+                  
+                          <!-- Insight 3 -->
+                          <div class="mt-5">
+                            <div class="columns is-vcentered">
+                              <div class="column is-one-third">
+                                <h4 class="subtitle is-5 has-text-weight-semibold">Computation vs Understanding Gap</h4>
+                              </div>
+                              <div class="column">
+                                <div class="message is-warning">
+                                  <div class="message-body">
+                                    Models demonstrate 42% higher GPI accuracy on computational problems compared to theoretical concepts
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  
+                          <!-- Insight 4 -->
+                          <div class="notification is-primary-light mt-5">
+                            <h4 class="subtitle is-5 has-text-weight-semibold">Plane Geometry Challenges</h4>
+                            <div class="columns">
+                              <div class="column">
+                                <p class="has-text-weight-medium">Key Limitations:</p>
+                                <ul>
+                                  <li>38% GPI accuracy drop in plane geometry vs solid geometry</li>
+                                  <li>High principle similarity causes 62% misidentification rate</li>
+                                </ul>
+                              </div>
+                              <div class="column">
+                                <p class="has-text-weight-medium">Recommendations:</p>
+                                <ul>
+                                  <li>Enhanced principle disambiguation training</li>
+                                  <li>Context-aware geometric reasoning frameworks</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                  
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <style>
+                  .insight-list {
+                    list-style-type: '▹ ';
+                    padding-left: 1.5rem;
+                    color: #4a4a4a;
+                  }
+                  .insight-list li {
+                    padding-left: 0.5rem;
+                    margin-bottom: 0.8rem;
+                  }
+                  .divider {
+                    background-color: #e8e8e8;
+                    margin: 2rem 0;
+                  }
+                  .notification.is-primary-light {
+                    background-color: #f0f7ff;
+                    border: 1px solid #cce5ff;
+                  }
+                  </style>
+
 
   </div>
 </section>
